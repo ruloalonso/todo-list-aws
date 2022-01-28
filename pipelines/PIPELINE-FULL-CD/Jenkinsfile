@@ -15,11 +15,11 @@ pipeline {
                     set -x
                     git branch -a
                     git checkout -b develop origin/develop
-                    git checkout -b master origin/master
+                    git checkout -b main origin/main
                     git merge develop
-                """, label: "Merging code to master"
+                """, label: "Merging code to main"
                 sshagent(['github-ssh']) {
-                    sh "git push origin master"
+                    sh "git push origin main"
                 }
 
             }
