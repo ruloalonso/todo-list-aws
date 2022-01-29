@@ -11,8 +11,7 @@ def getTranslated(event, context):
     if item:
         response = {
             "statusCode": 200,
-            "body": json.dumps(item.get('TranslatedText'),
-                               cls=decimalencoder.DecimalEncoder)
+            "body": json.dumps(item, cls=decimalencoder.DecimalEncoder)
         }
     else:
         response = {

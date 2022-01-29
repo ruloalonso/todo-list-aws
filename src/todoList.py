@@ -55,8 +55,7 @@ def get_translated_item(key, language, dynamodb=None):
         print(e.response['Error']['Message'])   # pragma: no cover
     else:
         print('Result getTranslatedItem:'+str(result))
-        if 'Item' in result:
-            return result['Item']
+        return translatedResult['TranslatedText']
 
 
 def get_items(dynamodb=None):
