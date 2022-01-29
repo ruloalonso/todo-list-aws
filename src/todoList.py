@@ -49,17 +49,19 @@ def get_translated_item(key, language, dynamodb=None):
                 'id': key
             }
         )
-        translatedResult = translate.translate_text(
-            Text="Hello, World",
-            SourceLanguageCode="en",
-            TargetLanguageCode=language
-        )
 
     except ClientError as e:
         print(e.response['Error']['Message'])   # pragma: no cover
     else:
-        print('Result getTranslatedItem:'+str(result))
-        return translatedResult['TranslatedText']
+        if 'Item' in result:
+            translation = translate.translate_text(
+                Text="result['Item']['text']",
+                SourceLanguageCode="es",
+                TargetLanguageCode=language
+            )
+            result['Item']['text'] = translation['TranslatedText']
+            print('Result getTranslatedItem:'+str(result))
+            return result['Item']
 
 
 def get_items(dynamodb=None):
