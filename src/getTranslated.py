@@ -2,6 +2,7 @@ import json
 import decimalencoder
 import todoList
 
+
 def getTranslated(event, context):
     # create a response
     id = event['pathParameters']['id']
