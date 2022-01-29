@@ -50,7 +50,7 @@ def get_translated_item(key, language, dynamodb=None):
             }
         )
         translatedResult = translate.translate_text(
-            Text="Hello, World", 
+            Text="Hello, World",
             SourceLanguageCode="en",
             TargetLanguageCode=language
         )
