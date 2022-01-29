@@ -125,9 +125,9 @@ class TestDatabaseFunctions(unittest.TestCase):
                 language,
                 self.dynamodb)
         print ('Response Get:' + str(responseGet))
-        # self.assertEqual(
-        #     'Hola, Mundo',
-        #     responseGet['text'])
+        self.assertEqual(
+            'Learn DevOps and Cloud at UNIR',
+            responseGet['text'])
         print ('End: test_get_translated_todo')
     
     def test_list_todo(self):
