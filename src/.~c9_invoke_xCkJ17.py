@@ -42,7 +42,7 @@ def get_item(key, dynamodb=None):
 
 
 def get_translated_item(key, language, dynamodb=None):
-    print('language ==>>'+str(language))
+    p
     table = get_table(dynamodb)
     try:
         result = table.get_item(
